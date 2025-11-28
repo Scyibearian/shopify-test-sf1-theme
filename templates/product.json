@@ -1,0 +1,264 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "highlights_pJ4MwA": {
+          "type": "highlights",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "collapse_content": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "badges",
+        "price",
+        "rating",
+        "payment_terms",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "highlights_pJ4MwA",
+        "description"
+      ],
+      "settings": {
+        "full_width": true,
+        "show_fixed_add_to_cart": false,
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "supplier_info_kRwzhj": {
+      "type": "supplier-info",
+      "blocks": {
+        "supplier_7MnbBj": {
+          "type": "supplier",
+          "settings": {
+            "image": "shopify://shop_images/Ellipse_6.png",
+            "caption": "Grower",
+            "heading": "Pedanios GmbH – Cultivated in Canada",
+            "content": "<p>The “El Jefe” strain is grown under strict conditions, following GACP standards, ensuring consistency in cannabinoid and terpene profiles. The cultivation process is environmentally conscious and carefully monitored to meet pharmaceutical-grade requirements.</p>",
+            "btn_1": "Website besuchen",
+            "btn_1_link": "shopify://collections/all",
+            "btn_2": "Mehr erfahren",
+            "btn_2_link": "shopify://collections/all"
+          }
+        },
+        "supplier_nfbhFA": {
+          "type": "supplier",
+          "settings": {
+            "image": "shopify://shop_images/Ellipse_6_1.png",
+            "caption": "Supplier",
+            "heading": "Cannamedical Pharma GmbH – Trusted Distribution in Germany",
+            "content": "<p>The “El Jefe” strain is grown under strict conditions, following GACP standards, ensuring consistency in cannabinoid and terpene profiles. The cultivation process is environmentally conscious and carefully monitored to meet pharmaceutical-grade requirements.</p>",
+            "btn_1": "Website besuchen",
+            "btn_1_link": "shopify://pages/behandlung-anfragen",
+            "btn_2": "Mehr erfahren",
+            "btn_2_link": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "supplier_7MnbBj",
+        "supplier_nfbhFA"
+      ],
+      "name": "Supplier Info",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 80,
+        "padding_top_m": 40,
+        "padding_bottom_m": 40
+      }
+    },
+    "delivery_steps_4BBppb": {
+      "type": "delivery-steps",
+      "blocks": {
+        "step_8tz6e8": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/sghwtrade_92975_square_11_format_realistic_photo_of_a_hand_ho_2a903521-c96b-4b90-8265-c2de48e55c0d_1.jpg",
+            "step": "Schritt 1",
+            "heading": "Anliegen beschreiben",
+            "content": "<p>Fülle online kurz Dein Anliegen, Symptome und Gesundheitszustand aus – schnell & bequem von zu Hause.</p>",
+            "icon": "shopify://shop_images/question_icon_eaff9f4e-b0cb-4e88-9f99-a22f950888cf.png",
+            "text": "Keine Wartezimmer, keine Bürokratie."
+          }
+        },
+        "step_jw3DT9": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/sghwtrade_92975_horizontal_169_photograph_of_a_smiling_male_d_3fb0ba4a-d7b2-4431-af49-b3702b3209a5_0.png",
+            "step": "Schritt 2",
+            "heading": "Rezept vom Arzt erhalten",
+            "content": "<p>Unsere Partnerärzte prüfen Deine Angaben. Bei Eignung bekommst du dein Rezept digital – direkt zur Apotheke oder Lieferung.</p>",
+            "icon": "shopify://shop_images/security_icon_ef85c302-33bf-4f0f-aa55-ab2452677c41.png",
+            "text": "Deine Daten bleiben vertraulich."
+          }
+        },
+        "step_PFJBhW": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/sghwtrade_92975_square_11_editorial-style_photograph_taken_ou_8915df1d-db0f-44f3-8989-60768edc84b6_0.png",
+            "step": "Schritt 3",
+            "heading": "Lieferung in 60–90 Minuten",
+            "content": "<p>Wähle Versand per DHL oder per Kurier von Deiner Apotheke. Wir versenden diskret: neutral verpackt, ohne Hinweis auf Cannabis.</p>",
+            "icon": "shopify://shop_images/live_bestand_icon_b4bf5cdc-2640-4cf8-9c3d-7a295bd48881.png",
+            "text": "Schnell. Sicher. Diskret."
+          }
+        }
+      },
+      "block_order": [
+        "step_8tz6e8",
+        "step_jw3DT9",
+        "step_PFJBhW"
+      ],
+      "name": "Delivery Steps",
+      "settings": {
+        "caption": "Schnell & einfach",
+        "heading": "So funktioniert’s",
+        "content": "<p>Von der Anfrage bis zur Lieferung – so wirst Du in wenigen Schritten Cannabis-Patient.</p>",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_m": 40,
+        "padding_bottom_m": 40
+      }
+    },
+    "featured_collection_9bgnbj": {
+      "type": "featured-collection",
+      "custom_css": [
+        "@media (min-width: 768px) {.product-list {padding-bottom: 90px; }}"
+      ],
+      "name": "Featured collection",
+      "settings": {
+        "collection": "cannabis-bluten-live-bestand",
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": false,
+        "products_count": 6,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "",
+        "content": "<h2>Medizinische Cannabis Blüten direkt aus der Apotheke</h2>",
+        "link_url": "",
+        "link_text": "Alle Blüten entdecken",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "recommendations_count": 6,
+        "products": [],
+        "full_width": true,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "You may also like",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "supplier_info_kRwzhj",
+    "delivery_steps_4BBppb",
+    "featured_collection_9bgnbj",
+    "related-products"
+  ]
+}

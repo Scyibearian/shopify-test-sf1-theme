@@ -1,0 +1,78 @@
+{{ 'custom-announcement-bar.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-announcement-bar">
+  <div class="custom-page-width">
+    <div class="cab-main">
+      {% if section.blocks.size > 0 %}
+        <div class="cab-icon-blocks">
+          {% for block in section.blocks %}
+            <div class="cab-icon-item">
+              {% if block.settings.icon_liquid != blank %}
+                <span class="cab-icon-item-svg">{{ block.settings.icon_liquid }}</span>
+              {% elsif block.settings.icon != blank %}
+                <img class="cab-icon-item-img" src="{{ block.settings.icon | image_url }}" alt="{{ block.settings.text }}" width="auto" height="auto">
+              {% endif %}
+              <span class="cab-icon-item-text">{{ block.settings.text }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if section.settings.review_liquid != blank or section.settings.review_image != blank %}
+        <div class="cab-review-block">
+          {% if section.settings.review_liquid != blank %}
+            {{ section.settings.review_liquid }}
+          {% else %}
+            <img class="cab-review-image" src="{{ section.settings.review_image | image_url }}" alt="cab-review" width="auto" height="auto">
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Custom Announcement Bar",
+    "settings": [
+      {
+        "type": "liquid",
+        "id": "review_liquid",
+        "label": "Review Snippet"
+      },
+      {
+        "type": "image_picker",
+        "id": "review_image",
+        "label": "Review Image",
+        "info": "If review snippet added then image will not appear."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icon_text",
+        "name":"Icon-Text",
+        "settings": [
+          {
+            "type": "liquid",
+            "id": "icon_liquid",
+            "label": "Icon SVG"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Announcement Bar"
+      }
+    ]
+  }
+{% endschema %}

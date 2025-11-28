@@ -1,0 +1,89 @@
+{% schema %}
+{
+  "name": "Trust Badges Row",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Logo image" },
+        { "type": "text", "id": "label", "label": "Optional label", "default": "Trust" },
+        { "type": "url", "id": "link", "label": "Optional link", "default": "/" }
+      ]
+    }
+  ],
+  "max_blocks": 6
+}
+{% endschema %}
+
+<div class="trust-row">
+  <div class="trust-row__inner">
+    {% assign trust_blocks = section.blocks | size %}
+    
+    {% if trust_blocks == 0 %}
+        <!-- Default 4 trust badges if no blocks set -->
+        {% for i in (1..4) %}
+            <div class="trust-item">
+                <a href="/" class="trust-item__link">
+                    <div class="trust-item__icon">
+                        {% render 'icon-shield' %}
+                    </div>
+                    <span class="trust-item__label">Trust</span>
+                </a>
+            </div>
+        {% endfor %}
+    {% else %}
+      <!-- Loop through user-defined Trust Badges -->
+      {% for block in section.blocks %}
+        <div class="trust-item">
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}">
+          {% endif %}
+            {% if block.settings.image %}
+              <img
+                src="{{ block.settings.image | image_url: width: 200 }}"
+                alt="{{ block.settings.label | escape }}"
+                width="200"
+                height="auto"
+                class="trust-item__image"
+              >
+            {% endif %}
+            {% if block.settings.label != blank %}
+              <span class="trust-item__label">{{ block.settings.label }}</span>
+            {% endif %}
+          {% if block.settings.link != blank %}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.trust-row {
+    padding: 0.5rem 0;
+}
+.trust-row__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+}
+.trust-item__image {
+    max-height: 40px;
+    width: auto;
+}
+.trust-item__icon svg {
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+}
+.trust-item__label {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+</style>

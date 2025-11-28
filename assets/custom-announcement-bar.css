@@ -1,0 +1,38 @@
+.cab-main {
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cab-icon-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.cab-icon-item-img, .cab-icon-item-svg svg {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+.cab-review-block {
+    width: 320px;
+}
+.cab-icon-blocks {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.cab-icon-item-svg {
+    display: flex;
+}
+.cab-icon-item-text {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+@media (max-width:767px){
+  .custom-announcement-bar{
+    display: none;
+  }
+}

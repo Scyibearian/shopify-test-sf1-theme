@@ -1,0 +1,25 @@
+<div class="steps-grid">
+  {% for block in section.blocks %}
+    <div class="step">
+      <div class="step__title">{{ block.settings.title }}</div>
+      <div class="step__text">{{ block.settings.text }}</div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Steps Grid",
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Step name" },
+        { "type": "textarea", "id": "text", "label": "Description" }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}

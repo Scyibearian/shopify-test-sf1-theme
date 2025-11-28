@@ -1,0 +1,172 @@
+{{ 'supplier-info.css' | asset_url | stylesheet_tag }}
+<style>
+  @media (min-width:768px){
+   .section--{{ section.id }}{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    } 
+  }
+  @media (max-width:767px){
+   .section--{{ section.id }}{
+      padding-top: {{ section.settings.padding_top_m }}px;
+      padding-bottom: {{ section.settings.padding_bottom_m }}px;
+    } 
+  }
+</style>
+
+<div class="supplier-info-main section--{{ section.id }}">
+  <div class="supplier-info-main-child">
+    <div class="custom-page-width">
+      <div class="supplier-info-flex">
+        {% for block in section.blocks %}
+          <div class="supplier-info-item">
+            <div class="supplier-info-header">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | image_url }}" width="auto" height="auto" alt="image">
+              {% endif %}
+              <div class="supplier-caption_heading">
+                {% if block.settings.caption != blank %}
+                  <span class="supplier_caption">{{ block.settings.caption }}</span>
+                {% endif %}
+                {% if block.settings.heading != blank %}
+                  <h5 class="supplier_heading">{{ block.settings.heading }}</h5>
+                {% endif %}
+              </div>
+            </div>
+            <div class="supplier-info-content">
+                {% if block.settings.content != blank %}
+                  <div class="supplier--content">{{ block.settings.content }}</div>
+                {% endif %}
+                {% if block.settings.btn_1 != blank or block.settings.btn_2 %}
+                  <div class="supplier--buttons">
+                    {% if block.settings.btn_1 != blank %}
+                      <a class="button" href="{{ block.settings.btn_1_link }}">{{ block.settings.btn_1 }}</a>
+                    {% endif %}
+                    {% if block.settings.btn_2 != blank %}
+                      <a href="{{ block.settings.btn_2_link }}">{{ block.settings.btn_2 }}</a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Supplier Info",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "range",
+        "id":"padding_top",
+        "label": "Top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id":"padding_bottom",
+        "label": "Bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "default": 80,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Paddings (Mobile)"
+      },
+      {
+        "type": "range",
+        "id":"padding_top_m",
+        "label": "Top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "default": 40,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id":"padding_bottom_m",
+        "label": "Bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "default": 40,
+        "unit": "px"
+      }
+    ],
+    "max_blocks": 2,
+    "blocks": [
+      {
+        "type": "supplier",
+        "name":"block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "caption",
+            "label": "Caption",
+            "default":"Supplier"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default":"Pedanios GmbH – Cultivated in Canada"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default":"<p>Pedanios GmbH collaborates with leading licensed producers in Canada to deliver high-quality medical cannabis.</p>"
+          },
+          {
+            "type": "text",
+            "id": "btn_1",
+            "label": "Button 1 Text",
+            "default":"Website besuchen"
+          },
+          {
+            "type": "url",
+            "id": "btn_1_link",
+            "label": "Button 1 Link"
+          },
+          {
+            "type": "text",
+            "id": "btn_2",
+            "label": "Button 2 Text",
+            "default":"Mehr erfahren"
+          },
+          {
+            "type": "url",
+            "id": "btn_2_link",
+            "label": "Button 2 Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Supplier Info"
+      }
+    ]
+  }
+{% endschema %}

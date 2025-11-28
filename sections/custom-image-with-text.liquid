@@ -1,0 +1,117 @@
+{% schema %}
+{
+  "name": "Custom Image with Text",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Überschrift 2" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Beschreibung Beschreibung ..." },
+    { "type": "text", "id": "cta_label", "label": "CTA Label", "default": "Jetzt hier anmelden" },
+    { "type": "url", "id": "cta_link", "label": "CTA Link", "default": "/" },
+    { "type": "image_picker", "id": "image", "label": "Image" }
+  ]
+}
+{% endschema %}
+
+<div class="hero-banner page-width">
+  <div class="hero-banner__grid">
+    
+    <!-- Left side image side -->
+    <div class="hero-banner__right">
+      {% if section.settings.map_image %}
+        <img
+          src="{{ section.settings.map_image | image_url: width: 800 }}"
+          alt="Map card"
+          width="{{ section.settings.map_image.width }}"
+          height="{{ section.settings.map_image.height }}"
+          class="hero-banner__map"
+        >
+      {% else %}
+        <div class="hero-banner__placeholder">Map Karte</div>
+      {% endif %}
+    </div>
+
+    <!-- Right side text side -->
+    <div class="hero-banner__left">
+      <h1 class="hero-banner__title">{{ section.settings.title }}</h1>
+
+      {% if section.settings.description != blank %}
+        <p class="hero-banner__description">{{ section.settings.description }}</p>
+      {% endif %}
+
+      {% if section.settings.cta_label and section.settings.cta_link %}
+        <a 
+          href="{{ section.settings.cta_link }}"
+          class="hero-banner__cta button"
+        >
+          {{ section.settings.cta_label }}
+        </a>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+<style>
+.hero-banner {
+  padding: 40px 0;
+}
+
+.hero-banner__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (min-width: 900px) {
+  .hero-banner__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero-banner__left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-banner__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero-banner__description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+.hero-banner__cta {
+  margin-top: 10px;
+}
+
+.hero-banner__right {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-banner__map,
+.hero-banner__placeholder {
+  width: 100%;
+  max-width: 100%;
+  height: 240px;
+  border-radius: 8px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+}
+
+.hero-banner__placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 550;
+  color: #555;
+}
+</style>

@@ -1,0 +1,150 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message": {
+          "type": "message",
+          "settings": {
+            "text": "Coming Soon",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "message"
+      ],
+      "settings": {
+        "enable_sticky": false,
+        "autoplay": false,
+        "cycle_speed": 6,
+        "text_size": "text-xs",
+        "navigation_mode": "scrolling",
+        "scrolling_speed": 10,
+        "background": "#1a1a1a",
+        "background_gradient": "",
+        "text_color": "#ffffff"
+      }
+    },
+    "custom_announcement_bar_CKPLRD": {
+      "type": "custom-announcement-bar",
+      "blocks": {
+        "icon_text_PEkwPj": {
+          "type": "icon_text",
+          "settings": {
+            "icon_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\">\n<path d=\"M7.99902 1.23352C11.7361 1.23352 14.7656 4.263 14.7656 8.00012C14.7656 11.7372 11.7361 14.7667 7.99902 14.7667C4.26194 14.7667 1.23244 11.7372 1.23242 8.00012C1.23242 4.26302 4.26193 1.23356 7.99902 1.23352ZM10.3232 5.89172C10.1986 5.89172 10.0689 5.92365 9.82422 6.09583C8.50359 7.02516 7.39681 8.31938 7.10352 8.82727L6.15137 7.87512C6.06055 7.78452 5.87908 7.672 5.66406 7.672C5.26766 7.67218 4.99627 8.00014 4.99609 8.33997C4.99609 8.53265 5.05735 8.67368 5.25684 8.87317L6.71875 10.3351C6.88873 10.505 7.05854 10.5616 7.22852 10.5616C7.54588 10.5616 7.72077 10.3804 7.89746 10.0743C8.68918 8.70313 9.91463 7.62663 10.6514 7.15051C10.9007 7.00655 10.9912 6.76016 10.9912 6.56067C10.9911 6.22079 10.6971 5.89195 10.3232 5.89172Z\" fill=\"#BCB88A\"/>\n</svg>",
+            "icon": "shopify://shop_images/Frame_2147228211.png",
+            "text": "Rezept ab 4,99€"
+          }
+        },
+        "icon_text_m9ipHi": {
+          "type": "icon_text",
+          "settings": {
+            "icon_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\">\n<path d=\"M7.99902 1.23352C11.7361 1.23352 14.7656 4.263 14.7656 8.00012C14.7656 11.7372 11.7361 14.7667 7.99902 14.7667C4.26194 14.7667 1.23244 11.7372 1.23242 8.00012C1.23242 4.26302 4.26193 1.23356 7.99902 1.23352ZM10.3232 5.89172C10.1986 5.89172 10.0689 5.92365 9.82422 6.09583C8.50359 7.02516 7.39681 8.31938 7.10352 8.82727L6.15137 7.87512C6.06055 7.78452 5.87908 7.672 5.66406 7.672C5.26766 7.67218 4.99627 8.00014 4.99609 8.33997C4.99609 8.53265 5.05735 8.67368 5.25684 8.87317L6.71875 10.3351C6.88873 10.505 7.05854 10.5616 7.22852 10.5616C7.54588 10.5616 7.72077 10.3804 7.89746 10.0743C8.68918 8.70313 9.91463 7.62663 10.6514 7.15051C10.9007 7.00655 10.9912 6.76016 10.9912 6.56067C10.9911 6.22079 10.6971 5.89195 10.3232 5.89172Z\" fill=\"#BCB88A\"/>\n</svg>",
+            "icon": "shopify://shop_images/Frame_2147228211.png",
+            "text": "Blüten ab 5,99€"
+          }
+        },
+        "icon_text_niFftp": {
+          "type": "icon_text",
+          "settings": {
+            "icon_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\">\n<path d=\"M7.99902 1.23352C11.7361 1.23352 14.7656 4.263 14.7656 8.00012C14.7656 11.7372 11.7361 14.7667 7.99902 14.7667C4.26194 14.7667 1.23244 11.7372 1.23242 8.00012C1.23242 4.26302 4.26193 1.23356 7.99902 1.23352ZM10.3232 5.89172C10.1986 5.89172 10.0689 5.92365 9.82422 6.09583C8.50359 7.02516 7.39681 8.31938 7.10352 8.82727L6.15137 7.87512C6.06055 7.78452 5.87908 7.672 5.66406 7.672C5.26766 7.67218 4.99627 8.00014 4.99609 8.33997C4.99609 8.53265 5.05735 8.67368 5.25684 8.87317L6.71875 10.3351C6.88873 10.505 7.05854 10.5616 7.22852 10.5616C7.54588 10.5616 7.72077 10.3804 7.89746 10.0743C8.68918 8.70313 9.91463 7.62663 10.6514 7.15051C10.9007 7.00655 10.9912 6.76016 10.9912 6.56067C10.9911 6.22079 10.6971 5.89195 10.3232 5.89172Z\" fill=\"#BCB88A\"/>\n</svg>",
+            "icon": "shopify://shop_images/Frame_2147228211.png",
+            "text": "Lieferung in 48h"
+          }
+        },
+        "icon_text_FFNnaB": {
+          "type": "icon_text",
+          "disabled": true,
+          "settings": {
+            "icon_liquid": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\">\n<path d=\"M7.99902 1.23352C11.7361 1.23352 14.7656 4.263 14.7656 8.00012C14.7656 11.7372 11.7361 14.7667 7.99902 14.7667C4.26194 14.7667 1.23244 11.7372 1.23242 8.00012C1.23242 4.26302 4.26193 1.23356 7.99902 1.23352ZM10.3232 5.89172C10.1986 5.89172 10.0689 5.92365 9.82422 6.09583C8.50359 7.02516 7.39681 8.31938 7.10352 8.82727L6.15137 7.87512C6.06055 7.78452 5.87908 7.672 5.66406 7.672C5.26766 7.67218 4.99627 8.00014 4.99609 8.33997C4.99609 8.53265 5.05735 8.67368 5.25684 8.87317L6.71875 10.3351C6.88873 10.505 7.05854 10.5616 7.22852 10.5616C7.54588 10.5616 7.72077 10.3804 7.89746 10.0743C8.68918 8.70313 9.91463 7.62663 10.6514 7.15051C10.9007 7.00655 10.9912 6.76016 10.9912 6.56067C10.9911 6.22079 10.6971 5.89195 10.3232 5.89172Z\" fill=\"#BCB88A\"/>\n</svg>",
+            "icon": "shopify://shop_images/Frame_2147228211.png",
+            "text": "Kostenfrei ab 100€"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_PEkwPj",
+        "icon_text_m9ipHi",
+        "icon_text_niFftp",
+        "icon_text_FFNnaB"
+      ],
+      "disabled": true,
+      "name": "Custom Announcement Bar",
+      "settings": {
+        "review_liquid": "",
+        "review_image": "shopify://shop_images/Frame_2147228220_1.svg"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "mega_menu_DLKz9n": {
+          "type": "mega_menu",
+          "disabled": true,
+          "settings": {
+            "menu_item": "",
+            "layout": "horizontal",
+            "submenu_style": "bold_heading",
+            "image_heading_1": "",
+            "image_link_1": "",
+            "image_text_color_1": "#ffffff",
+            "image_heading_2": "",
+            "image_link_2": "",
+            "image_text_color_2": "#ffffff",
+            "image_heading_3": "",
+            "image_link_3": "",
+            "image_text_color_3": "#ffffff",
+            "product": "",
+            "product_card_background": "",
+            "product_card_text_color": "",
+            "promo_content_layout": "grid",
+            "stretch_promo": false,
+            "drawer_link_image": "hide"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_DLKz9n"
+      ],
+      "settings": {
+        "enable_sticky": false,
+        "hide_on_scroll": true,
+        "logo": "shopify://shop_images/image_139.png",
+        "logo_max_width": 220,
+        "logo_mobile_max_width": 185,
+        "menu": "soft-launch-main-menu",
+        "sidebar_menu": "",
+        "secondary_menu": "",
+        "menu_open_trigger": "hover",
+        "opening_from": "left",
+        "layout": "logo_left_navigation_center",
+        "show_social_media": true,
+        "show_locale_selector": false,
+        "show_country_selector": true,
+        "show_country_flag": true,
+        "show_country_name": false,
+        "transparent_header_text_color": "#ffffff",
+        "reduce_padding": true,
+        "background_opacity": 100,
+        "background_blur_radius": 0
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "custom_announcement_bar_CKPLRD",
+    "header"
+  ]
+}

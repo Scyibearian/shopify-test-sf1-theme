@@ -1,0 +1,25 @@
+<div class="customer-cards">
+  {% for block in section.blocks %}
+    <div class="card">
+      <div class="card__title">{{ block.settings.title }}</div>
+      <div class="card__text">{{ block.settings.text }}</div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Customer Cards",
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Customer card name" },
+        { "type": "textarea", "id": "text", "label": "Description" }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}

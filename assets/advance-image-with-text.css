@@ -1,0 +1,125 @@
+.advance-image-with-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(255, 255, 255, 1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.7) inset;
+    border-radius: 36px;
+    overflow: hidden;
+}
+.aiwt-layout-last {
+    flex-direction: row-reverse;
+}
+.aiwt-image {
+    width: 41%;
+}
+.aiwt-content {
+    width: 59%;
+    padding: 64px 88px;
+}
+.aiwt__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.aiwt-image {
+    /* border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px; */
+    border-radius: 16px;
+    overflow: hidden;
+}
+.aiwt-caption-block {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 95%;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.aiwt-heading-block h2 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 100%;
+    margin-bottom: 24px;
+}
+.aiwt-richtext-block {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 144%;
+  margin-bottom: 20px; 
+}
+.aiwt-subheading-block {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 95%;
+  margin-bottom: 20px;
+    margin-top: 40px;
+}
+.aiwt-icon_text_block {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 144%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+.aiwt-icons-block {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.aiwt-icon-item img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+.aiwt-icon-item {
+  border: 1px solid rgba(242, 242, 242, 1);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 80px;
+  width: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 14px;
+}
+.aiwt-buttons-block {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+.aiwt--btn {
+    font-weight: 500;
+}
+.aiwt-richtext-block a {
+    text-decoration: underline;
+}
+
+@media (max-width:767px){
+  .advance-image-with-text{
+    flex-direction: column!important;
+  }
+  .advance-image-with-text-main-child {
+    padding: 0 20px;
+  }
+  .aiwt-image{
+    width: 100%;
+  }
+  .aiwt-content {
+    width: 100%;
+    padding: 32px 24px;
+  }
+  .aiwt-heading-block h2 {
+    font-size: 28px;
+  }
+  .aiwt-richtext-block {
+    font-size: 16px;
+  }
+  .aiwt-subheading-block {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+}

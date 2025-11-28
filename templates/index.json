@@ -1,0 +1,65 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "custom-hero-banner",
+      "settings": {}
+    },
+    "trust": {
+      "type": "trust-row",
+      "settings": {}
+    },
+    "imgtxt1": {
+      "type": "custom-image-with-text",
+      "settings": {}
+    },
+    "steps": {
+      "type": "steps-grid",
+      "settings": {}
+    },
+    "cta": {
+      "type": "rich-text",
+      "settings": {}
+    },
+    "imgtxt2": {
+      "type": "advance-image-with-text",
+      "settings": {}
+    },
+    "experiences": {
+      "type": "customer-cards",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    },
+    "contact": {
+      "type": "contact",
+      "settings": {}
+    },
+    "definitions": {
+      "type": "rich-text",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "trust",
+    "imgtxt1",
+    "steps",
+    "cta",
+    "imgtxt2",
+    "experiences",
+    "faq",
+    "contact",
+    "definitions"
+  ]
+}

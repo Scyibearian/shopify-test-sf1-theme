@@ -1,0 +1,92 @@
+.hero-bg-image {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.hero-banner-main{
+  position: relative;
+}
+.hero-banner-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+      width: 100%;
+}
+.hero-banner-content-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+      width: 70%;
+}
+.hero-icon_text_block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(180deg, rgba(243, 253, 255, 0.8) 0%, #F0FDFF 100%);
+    padding: 6px 14px;
+    border-radius: 100px;
+    width: fit-content;
+}
+.hero-heading-block h2 {
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 95%;
+}
+.hero-richtext-block {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 144%;
+}
+.hero-richtext-block li {
+  padding-left: 34px;
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+}
+.hero-richtext-block ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hero-richtext-block li:before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(https://cdn.shopify.com/s/files/1/0905/9142/8936/files/Check_Circle.svg?v=1751301625);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.hero-buttons_block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.hero-bg-image-mobile{
+  display: none;
+}
+@media (min-width:768px){
+  .hero-banner-main {
+    position: relative;
+    margin-top: -96px;
+  }
+}
+
+@media (max-width:767px){
+  .hero-banner-content-flex {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .hero-heading-block h2 {
+    font-size: 32px;
+  }
+  .hero-bg-image-desktop{
+    display: none;
+  }
+  .hero-bg-image-mobile{
+    display: block;
+  }
+}

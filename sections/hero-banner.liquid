@@ -1,0 +1,202 @@
+{{ 'hero-banner.css' | asset_url | stylesheet_tag }}
+<style>
+  @media (min-width:768px){
+    .hero-banner-img-{{ section.id }}{
+      height:{{ section.settings.container_height }}px;
+    }
+  }
+  @media (max-width:767px){
+    .hero-banner-img-{{ section.id }}{
+      height:{{ section.settings.container_height_m }}px;
+    }
+  }
+</style>
+
+<div class="hero-banner-main">
+  <div class="hero-banner-img hero-banner-img-{{ section.id }}">
+    {% if section.settings.bg_image != blank %}
+      <img class="hero-bg-image hero-bg-image-desktop" src="{{ section.settings.bg_image | image_url }}" width="auto" height="autp" alt="hero-banner" loading="eager" fetchpriority="high">
+      {% if section.settings.bg_image_m != blank %}
+        <img class="hero-bg-image hero-bg-image-mobile" src="{{ section.settings.bg_image_m | image_url }}" width="auto" height="autp" alt="hero-banner" loading="eager" fetchpriority="high">  
+      {% else %}
+        <img class="hero-bg-image hero-bg-image-mobile" src="{{ section.settings.bg_image | image_url }}" width="auto" height="autp" alt="hero-banner" loading="eager" fetchpriority="high">
+      {% endif %}
+    {% else %}
+      {%- capture placeholder_image -%}{% cycle 'placeholder': 'lifestyle-1', 'lifestyle-2' %}{%- endcapture -%}
+      {{- placeholder_image | placeholder_svg_tag: 'placeholder' | replace: '<svg', '<svg preserveAspectRatio="xMinYMin slice"' -}}
+    {% endif %}
+  </div>
+  <div class="hero-banner-content">
+    <div class="custom-page-width">
+      <div class="hero-banner-content-flex">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'heading' %}
+              <div class="hero-heading-block {% if block.settings.hide_desktop %}hide_desktop{% endif %} {% if block.settings.hide_mobile %}hide_mobile{% endif %}">
+                <h2>{{ block.settings.heading }}</h2>
+              </div>
+            {% when 'richtext' %}
+              <div class="hero-richtext-block {% if block.settings.hide_desktop %}hide_desktop{% endif %} {% if block.settings.hide_mobile %}hide_mobile{% endif %}">
+                {{ block.settings.richtext }}
+              </div>
+            {% when 'icon_text' %}
+              <div class="hero-icon_text_block {% if block.settings.hide_desktop %}hide_desktop{% endif %} {% if block.settings.hide_mobile %}hide_mobile{% endif %}">
+                {% if block.settings.icon != blank %}
+                  <img src="{{ block.settings.icon | image_url }}" width="24px" height="24px" alt="icon">
+                {% endif %}
+                <span>{{ block.settings.text }}</span>
+              </div>
+            {% when 'buttons' %}
+              <div class="hero-buttons_block">
+                {% if block.settings.btn_name != blank %}
+                  <a class="button hero-btns_action" href="{{ block.settings.btn_link }}">{{ block.settings.btn_name }}</a>
+                {% endif %}
+                {% if block.settings.btn_image != blank %}
+                  <a href="{{ block.settings.image_link }}">
+                    <img src="{{ block.settings.btn_image | image_url }}" width="auto" height="auto" alt="button">
+                  </a>
+                {% endif %}
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image_m",
+        "label": "Background Image (Mobile)"
+      },
+      {
+        "type": "range",
+        "id": "container_height",
+        "label": "Container Minimum Height",
+        "min": 400,
+        "max": 1600,
+        "step": 20,
+        "default":800
+      },
+      {
+        "type": "range",
+        "id": "container_height_m",
+        "label": "Container Minimum Height (Mobile)",
+        "min": 400,
+        "max": 1600,
+        "step": 20,
+        "default":560
+      }
+    ],
+    "blocks": [
+      {
+        "type": "heading",
+        "name":"Heading",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide_desktop",
+            "label": "Hide in Desktop ?"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide_mobile",
+            "label": "Hide in Mobile ?"
+          }
+        ]
+      },
+      {
+        "type": "richtext",
+        "name":"RichText",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Text"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide_desktop",
+            "label": "Hide in Desktop ?"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide_mobile",
+            "label": "Hide in Mobile ?"
+          }
+        ]
+      },
+      {
+        "type": "buttons",
+        "name":"Button",
+        "settings": [
+          {
+            "type": "text",
+            "id": "btn_name",
+            "label": "Button Name"
+          },
+          {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Button Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "btn_image",
+            "label": "Image"
+          },
+          {
+            "type": "url",
+            "id": "image_link",
+            "label": "Image Link"
+          }
+        ]
+      },
+      {
+        "type": "icon_text",
+        "name":"Icon Text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide_desktop",
+            "label": "Hide in Desktop ?"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide_mobile",
+            "label": "Hide in Mobile ?"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Banner"
+      }
+    ]
+  }
+{% endschema %}
