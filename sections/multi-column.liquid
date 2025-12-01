@@ -1,18 +1,19 @@
-{%- if section.blocks.size > 0 -%}
-  {%- render 'section-spacing-collapsing' -%}
+{%- render 'section-spacing-collapsing' -%}
 
-  <style>
-    #shopify-section-{{ section.id }} {
-      --multi-column-grid: {% if section.settings.stack_on_mobile %}none{% else %}auto / auto-flow 73vw{% endif %};
-      --multi-column-list-gap: {% if section.settings.gap == 'small' %}var(--grid-gutter){% elsif section.settings.gap == 'medium' %}var(--spacing-12){% elsif section.settings.gap == 'large' %}var(--spacing-20){% else %}var(--spacing-28){% endif %};
-    }
-  </style>
+<style>
+  #shopify-section-{{ section.id }} {
+    --multi-column-grid: {% if section.settings.stack_on_mobile %}none{% else %}auto / auto-flow 73vw{% endif %};
+    --multi-column-list-gap: {% if section.settings.gap == 'small' %}var(--grid-gutter){% elsif section.settings.gap == 'medium' %}var(--spacing-12){% elsif section.settings.gap == 'large' %}var(--spacing-20){% else %}var(--spacing-28){% endif %};
+  }
+</style>
 
-  <div {% render 'section-properties' %}>
-    <div class="section-stack">
-      {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, content: section.settings.content, text_alignment: section.settings.text_alignment -%}
+<div {% render 'section-properties' %}>
+  <div class="section-stack">
+    {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, content: section.settings.content, text_alignment: section.settings.text_alignment -%}
 
-      <div class="multi-column scroll-area bleed md:unbleed">
+    <div class="multi-column scroll-area bleed md:unbleed">
+
+      {%- if section.blocks.size > 0 -%}
         {%- for block in section.blocks -%}
           {%- liquid
             assign loading_strategy = nil
@@ -63,10 +64,42 @@
               <div class="multi-column__item hidden md:block" style="--multi-column-item-column-count: span {{ 12.0 | divided_by: block.settings.column_size | round }}" {{ block.shopify_attributes }}></div>
           {%- endcase -%}
         {%- endfor -%}
-      </div>
+
+      {%- else -%}
+        {% comment %} Render default Kundenerfahrungen if no blocks exist {% endcomment %}
+        {%- assign default_column_size = 3 -%}
+        <div class="multi-column__item justify-{{ section.settings.text_alignment }} snap-start" style="--multi-column-item-column-count: span {{ 12.0 | divided_by: default_column_size | round }}">
+          <div class="v-stack gap-4 text-{{ section.settings.text_alignment }}">
+            <p class="h4">Kundenerfahrung 1</p>
+            <div class="prose">
+              <p>Beschreibung für Kundenerfahrung 1</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="multi-column__item justify-{{ section.settings.text_alignment }} snap-start" style="--multi-column-item-column-count: span {{ 12.0 | divided_by: default_column_size | round }}">
+          <div class="v-stack gap-4 text-{{ section.settings.text_alignment }}">
+            <p class="h4">Kundenerfahrung 2</p>
+            <div class="prose">
+              <p>Beschreibung für Kundenerfahrung 2</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="multi-column__item justify-{{ section.settings.text_alignment }} snap-start" style="--multi-column-item-column-count: span {{ 12.0 | divided_by: default_column_size | round }}">
+          <div class="v-stack gap-4 text-{{ section.settings.text_alignment }}">
+            <p class="h4">Kundenerfahrung 3</p>
+            <div class="prose">
+              <p>Beschreibung für Kundenerfahrung 3</p>
+            </div>
+          </div>
+        </div>
+
+      {%- endif -%}
+
     </div>
   </div>
-{%- endif -%}
+</div>
 
 {% schema %}
 {

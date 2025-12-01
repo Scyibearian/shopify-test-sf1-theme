@@ -30,12 +30,15 @@
       "settings": {}
     },
     "imgtxt2": {
-      "type": "advance-image-with-text",
+      "type": "custom-hero-banner",
       "settings": {}
     },
     "experiences": {
-      "type": "customer-cards",
-      "settings": {}
+      "type": "multi-column",
+      "settings": {
+        "subheading": "Kundenerfahrungen",
+        "title": "Unsere Kunden"
+      }
     },
     "faq": {
       "type": "faq",
