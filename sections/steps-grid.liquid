@@ -1,25 +1,122 @@
-<div class="steps-grid">
-  {% for block in section.blocks %}
-    <div class="step">
-      <div class="step__title">{{ block.settings.title }}</div>
-      <div class="step__text">{{ block.settings.text }}</div>
-    </div>
-  {% endfor %}
+<div class="steps-container">
+  <div class="steps-line"></div>
+  <div class="steps-wrapper">
+    {% if section.blocks.size > 0 %}
+      
+      {% comment %}
+        Render real blocks
+      {% endcomment %}
+      {% for block in section.blocks %}
+        <div class="step-item step-{{ forloop.index }} {% cycle 'step-left', 'step-right' %}">
+          <div class="step-content">
+            <h3 class="step-title">{{ block.settings.title }}</h3>
+            <p class="step-text">{{ block.settings.text }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      
+      {% comment %}
+        Render default placeholder steps
+      {% endcomment %}
+      {% for i in (1..4) %}
+        <div class="step-item step-{{ i }} {% cycle 'step-left', 'step-right' %}">
+          <div class="step-content">
+            <h3 class="step-title">Step {{ i }}</h3>
+            <p class="step-text">Describe this step here.</p>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
 </div>
 
+<style>
+.steps-container {
+  position: relative;
+  width: 100%;
+  padding: 4rem 0;
+}
+/* Central vertical line */
+.steps-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #333;
+  transform: translateX(-50%);
+}
+.steps-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  position: relative;
+}
+.step-item {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr; /* left | line | right */
+  align-items: center;
+  position: relative;
+}
+.step-left .step-content {
+  grid-column: 1;      /* left */
+  justify-self: end;
+  margin-right: 7rem;
+}
+.step-right .step-content {
+  grid-column: 3;      /* right */
+  justify-self: start;
+  margin-left: 7rem;
+}
+.step-content {
+  max-width: 70%;
+}
+.step-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.step-text {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+</style>
 {% schema %}
 {
   "name": "Steps Grid",
+  "settings": [],
   "blocks": [
     {
       "type": "step",
       "name": "Step",
       "settings": [
-        { "type": "text", "id": "title", "label": "Step name" },
-        { "type": "textarea", "id": "text", "label": "Description" }
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step title",
+          "default": "Step title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Step description",
+          "default": "Step description"
+        }
       ]
     }
   ],
-  "max_blocks": 4
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Steps timeline",
+      "blocks": [
+        { "type": "step" },
+        { "type": "step" },
+        { "type": "step" },
+        { "type": "step" }
+      ]
+    }
+  ]
 }
 {% endschema %}
