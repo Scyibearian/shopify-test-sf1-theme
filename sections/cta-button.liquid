@@ -1,0 +1,54 @@
+<div class="cta-button-section">
+  <a href="{{ section.settings.button_link }}" class="cta-button">
+    {{ section.settings.button_text }}
+  </a>
+</div>
+
+<style>
+.cta-button-section {
+  width: 100%;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.cta-button {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* centre horizontally */
+  padding: 0.5rem 2rem;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Wide CTA Button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Größer CTA"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wide CTA Button"
+    }
+  ]
+}
+{% endschema %}

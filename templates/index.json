@@ -26,7 +26,7 @@
       "settings": {}
     },
     "cta": {
-      "type": "rich-text",
+      "type": "cta-button",
       "settings": {}
     },
     "imgtxt2": {
