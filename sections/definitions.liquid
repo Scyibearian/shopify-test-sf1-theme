@@ -1,0 +1,73 @@
+{% schema %}
+{
+  "name": "Definitions",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "box",
+      "name": "Box",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Box Text",
+          "default": "Definitions & Nebenkeywords"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Definitions & Nebenkeywords",
+      "blocks": [
+        {"type": "box"},
+        {"type": "box"},
+        {"type": "box"},
+        {"type": "box"}
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="definitions-section">
+  {%- if section.blocks.size > 0 -%}
+    {%- for block in section.blocks -%}
+      <div class="definition-box">
+        <span>{{ block.settings.text }}</span>
+      </div>
+    {%- endfor -%}
+  {%- else -%}
+    {% comment %}
+      Render 4 default boxes if no blocks exist
+    {% endcomment %}
+    <div class="definition-box"><span>Definitions & Nebenkeywords</span></div>
+    <div class="definition-box"><span>Definitions & Nebenkeywords</span></div>
+    <div class="definition-box"><span>Definitions & Nebenkeywords</span></div>
+    <div class="definition-box"><span>Definitions & Nebenkeywords</span></div>
+  {%- endif -%}
+
+  <style>
+    .definitions-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      text-align: center;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+    }
+
+    .definitions-section .definition-box {
+      flex: 1 1 22%;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      min-height: 80px;
+      display: flex;
+    }
+
+    .definitions-section .definition-box span {
+      display: inline-block;
+      word-wrap: break-word;
+    }
+  </style>
+</div>

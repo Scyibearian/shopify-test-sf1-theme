@@ -2,11 +2,12 @@
 {
   "name": "Custom Image with Text",
   "settings": [
-    { "type": "text", "id": "title", "label": "Title", "default": "Überschrift 2" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Überschrift 1" },
     { "type": "textarea", "id": "description", "label": "Description", "default": "Beschreibung Beschreibung ..." },
     { "type": "text", "id": "cta_label", "label": "CTA Label", "default": "Jetzt hier anmelden" },
     { "type": "url", "id": "cta_link", "label": "CTA Link", "default": "/" },
-    { "type": "image_picker", "id": "image", "label": "Image" }
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "checkbox", "id":"flip_sides", "label": "Flip text and image sides", "default": false }
   ]
 }
 {% endschema %}
@@ -14,22 +15,24 @@
 <div class="hero-banner page-width">
   <div class="hero-banner__grid">
     
-    <!-- Left side image side -->
-    <div class="hero-banner__right">
-      {% if section.settings.map_image %}
-        <img
-          src="{{ section.settings.map_image | image_url: width: 800 }}"
-          alt="Map card"
-          width="{{ section.settings.map_image.width }}"
-          height="{{ section.settings.map_image.height }}"
-          class="hero-banner__map"
-        >
-      {% else %}
-        <div class="hero-banner__placeholder">Map Karte</div>
-      {% endif %}
-    </div>
+    {% if section.settings.flip_sides %}
+      <!-- Picture side on left -->
+      <div class="hero-banner__right">
+        {% if section.settings.image %}
+          <img
+            src="{{ section.settings.image | image_url: width: 800 }}"
+            alt="Bild"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}"
+            class="hero-banner__image"
+          >
+        {% else %}
+          <div class="hero-banner__placeholder">Bild</div>
+        {% endif %}
+      </div>
+    {% endif %}
 
-    <!-- Right side text side -->
+    <!-- Text side-->
     <div class="hero-banner__left">
       <h1 class="hero-banner__title">{{ section.settings.title }}</h1>
 
@@ -46,6 +49,23 @@
         </a>
       {% endif %}
     </div>
+
+    {% unless section.settings.flip_sides %}
+      <!-- Picture side on right -->
+      <div class="hero-banner__right">
+        {% if section.settings.image %}
+          <img
+            src="{{ section.settings.image | image_url: width: 800 }}"
+            alt="Bild"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}"
+            class="hero-banner__image"
+          >
+        {% else %}
+          <div class="hero-banner__placeholder">Bild</div>
+        {% endif %}
+      </div>
+    {% endunless %}
 
   </div>
 </div>
@@ -97,7 +117,7 @@
   justify-content: center;
 }
 
-.hero-banner__map,
+.hero-banner__image,
 .hero-banner__placeholder {
   width: 100%;
   max-width: 100%;

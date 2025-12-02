@@ -10,7 +10,7 @@
 {
   "sections": {
     "hero": {
-      "type": "custom-hero-banner",
+      "type": "custom-image-with-text",
       "settings": {}
     },
     "trust": {
@@ -19,7 +19,10 @@
     },
     "imgtxt1": {
       "type": "custom-image-with-text",
-      "settings": {}
+      "settings": {
+        "title": "Überschrift 2",
+        "flip_sides": "true"
+      }
     },
     "steps": {
       "type": "steps-grid",
@@ -30,8 +33,10 @@
       "settings": {}
     },
     "imgtxt2": {
-      "type": "custom-hero-banner",
-      "settings": {}
+      "type": "custom-image-with-text",
+      "settings": {
+        "title": "Überschrift 3",
+      }
     },
     "experiences": {
       "type": "multi-column",
@@ -49,7 +54,7 @@
       "settings": {}
     },
     "definitions": {
-      "type": "rich-text",
+      "type": "definitions",
       "settings": {}
     }
   },
